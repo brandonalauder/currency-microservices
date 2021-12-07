@@ -1,0 +1,6 @@
+Currency microservices is a project with two RESTful microservices created in Spring Boot which interact with an H2 database and return converted currency values based off of the conversion factors found in the database. Currency-exchange-service returns the currency conversion factors, while currency-conversion-services takes a quantity and returns the converted quantity based off of the output from the currency-exchange-service. This is done through a feign proxy. The naming server uses Eureka to discover and manage the microservices, while the gateway is used to track the requests and make them all accessable through one port. 
+To run the microservices, simply download the docker-compose.yaml file and then run 'docker-compose pull', and 'docker-compose up'
+Test URL's:
+Eureka: http://localhost:8761/
+Currency exchange microservice: http://localhost:8765/currency-exchange/from/USD/to/INR
+Currency conversion microservice: http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
